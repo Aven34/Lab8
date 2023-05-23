@@ -1,0 +1,69 @@
+class Notebook:
+
+    def __init__(self):
+
+        self.notes = []
+
+    def add_note(self, note):
+
+        self.notes.append(note)
+
+    def remove_note_by_index(self, index):
+
+        del self.notes[index]
+
+    def remove_note_by_id(self, note_id):
+
+        for note in self.notes:
+
+            if note.id == note_id:
+
+                self.notes.remove(note)
+
+    def search_by_last_name(self, last_name):
+
+        result = []
+
+        for note in self.notes:
+
+            if note.last_name == last_name:
+
+                result.append(note)
+
+        return result
+
+    def search_by_birth_date(self, birth_date):
+
+        result = []
+
+        for note in self.notes:
+
+            if note.birth_date == birth_date:
+
+                result.append(note)
+
+        return result
+
+    def search_by_phone_number(self, phone_number):
+
+        result = []
+
+        for note in self.notes:
+
+            if note.phone_number == phone_number:
+
+                result.append(note)
+
+        return result
+
+    def sort_by_last_name(self):
+
+        self.notes.sort(key=lambda x: x.last_name)
+
+    def sort_by_birth_date(self):
+
+        self.notes.sort(key=lambda x: x.birth_date)
+
+    def sort_by_phone_number(self):
+
+        self.notes.sort(key=lambda x: x.phone_number)
